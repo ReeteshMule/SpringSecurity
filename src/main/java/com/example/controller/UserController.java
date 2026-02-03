@@ -1,5 +1,8 @@
 package com.example.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -34,6 +37,11 @@ public class UserController {
 	@PutMapping("/update/{id}")
 	public Users update(@PathVariable int id, @RequestBody Users user) {
 		return us.update(id,user);
+	}
+	
+	@GetMapping("/getusers")
+	public List<Users> getUsers() {
+		return us.getUsers();
 	}
 
 }
